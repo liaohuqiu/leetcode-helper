@@ -1,0 +1,11 @@
+{
+  "app_name": {
+    "message": "Leetcode Helper"
+  },
+  "open_todo": {
+    "message": "TODO"
+  },
+  "about": {
+    "message": "About"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_app_name__",
+  "default_locale": "en",
+  "version": "0.0.2",
+  "description": "Mark the challange you want to conqure and make it done soon.",
+  "permissions": [
+    "tabs", 
+    "http://*/*", 
+    "https://*/*",
+    "storage", 
+    "cookies", 
+    "notifications", 
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["dist/js/background.js"],
+    "persistent": true
+  },
+  "web_accessible_resources": [
+    "dist/*",
+    "img/*"
+  ],
+  "content_scripts" : [
+    {
+    "js" : [
+      "dist/js/app.js"
+    ],
+    "css" : [
+      "dist/css/app.css"
+    ],
+    "matches" : [
+      "*://*.leetcode.com/*",
+      "*://leetcode.com/*"
+    ]
+  }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com https://ssl.google-analytics.com; object-src 'self'",
+  "icons": {
+    "16": "./img/icon_16x16.png", 
+    "48": "./img/icon_48x48.png", 
+    "128": "./img/icon_128x128.png"
+  },
+  "browser_action": {
+    "default_popup": "./app/popup.html",
+    "default_title": "Leetcode Helper",
+    "default_icon": "./img/icon_128x128.png"
+  }
+}
